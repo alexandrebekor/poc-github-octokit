@@ -4,7 +4,7 @@ const Index = () => {
     return (
         <>
             <section>
-                <h2>Hello</h2>
+                <h2>Hello World</h2>
             </section>
         </>
     )
