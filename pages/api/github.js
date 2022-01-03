@@ -1,12 +1,10 @@
-const getInfo = async (req, res) => {
-    const response = await fetch('https://api.github.com/user/repos', {
-        method: "GET",
-        headers: {
-            "Authorization": `token ${process.env.GITHUB_TOKEN}`
-        }
-    })
-    const data = await response.json()
-    res.send(data)
+import { Octokit } from "octokit"
+
+const getRepos = async (req, res) => {
+    const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN })
+    const response = await octokit.request("GET /user/repos")
+
+    res.send(response.data)
 }
 
-export default getInfo
+export default getRepos

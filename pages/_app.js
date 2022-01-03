@@ -1,12 +1,12 @@
 import React from 'react'
 import Template from '../components/Template'
 
-const App = ({ Component, props }) => {
+const App = ({ Component, pageProps }) => {
     return (
         <Template>
-            <Component {...props} />
+            <Component {...pageProps} />
         </Template>
     )
 }
 
-module.exports = App
+export default App
